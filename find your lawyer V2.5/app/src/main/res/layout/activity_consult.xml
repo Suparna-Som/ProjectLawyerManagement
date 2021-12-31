@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ConsultActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@drawable/gradientcolor"
+
+        android:layout_marginTop="-1dp" />
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="30dp"
+        android:layout_margin="13dp"
+        android:src="@drawable/back_to_home_button"
+        android:id="@+id/backImage"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="13dp"
+        android:src="@drawable/ic_favorite_black_24dp"/>
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/backImage"
+        android:src="@drawable/profilelogo"
+        android:id="@+id/profileImage"
+        android:layout_margin="9dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_toRightOf="@+id/profileImage"
+        android:id="@+id/lin"
+        android:layout_below="@+id/backImage">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="9dp"
+            android:fontFamily="sans-serif"
+            android:text="Advocate Kishan Dutt Kalaskar "
+            android:textColor="#ffff"
+            android:textSize="22dp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_verified_24"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="13dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/profileImage"
+        android:id="@+id/lin2"
+        android:layout_below="@+id/lin">
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Material.RatingBar.Small"
+        android:layout_below="@+id/profileImage"
+        android:rating="4"
+        android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="14dp"
+            android:textColor="#ffff"
+            android:text="168 Reviews"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/lin2">
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:tabTextColor="#ffff"
+            android:id="@+id/tab"
+            app:tabSelectedTextColor="#ffff"
+            app:tabIndicatorColor="#ffff">
+            
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:id="@+id/tabItem1"
+                android:icon="@drawable/ic_person_black_24dp"/>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consultation"
+                android:id="@+id/tabItem2"
+                android:icon="@drawable/ic_meeting_svgrepo_com"/>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reviews"
+                android:id="@+id/tabItem3"
+                android:icon="@drawable/rating"/>
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/viewpager"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

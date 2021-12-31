@@ -1,0 +1,135 @@
+/* 	WFACES COMPONENTS AND THEME STYLE OVERRIDING/FIXING
+	CSS classes in this section must be applied ONLY to w-faces components and theme.
+	All selectors described in this file have the purpose to fix/change an undesired style on a component. 
+*******************************************************************************************************************	*/
+
+/*	<w:viewPanel> */
+/* ============================================================================================= */
+	/*	Removes the margin given to display the action buttons when they're not displayed */
+		.wf-view-panel--fix-padding .b-view-panel__content {
+			padding-right: 1.125em;
+		}
+		
+		[dir=rtl] .wf-view-panel--fix-padding .b-view-panel__content {
+			padding-left: 1.125em;
+		}
+
+/*	<w:editPanel> */
+/* ============================================================================================= */
+	/* Avoid extra space added after the editPanel. Annoying in pages with buttons added below the editPanel */
+	.b-page .b-edit-panel:after {
+		content: none;
+	}
+	
+/*	<p:dataTable> */
+/* ============================================================================================= */
+	/* 	Override the default 'nowrap' behaviour given by WFaces to the table's rows. Set the content back to 'normal' */
+	.ui-datatable table.b-table {
+		white-space: normal;
+	}
+
+	/* 	Override the display value. By default WFaces set the display to 'inline-row'. 
+		This produce an extra space between the p:dataTable's wrapper div and it's footer div */
+	.ui-datatable .ui-datatable-tablewrapper {
+		display: block;
+	}
+	
+	/* 	Avoids browser's default focus style */
+	.ui-datatable > .ui-datatable-tablewrapper > table > thead > tr > th:focus {
+		outline: none;
+	}
+	
+	/* States */
+	/* ===================================================================== */
+		/* Highlight - Selected 
+			- Override wfaces */
+		.ui-datatable table tr.ui-datatable-selectable.ui-state-highlight.ui-state-hover {
+			background-color: #f7f7f7 !important;
+		}
+	
+		/* Hover (mouse over, keyboard hover) */
+		.ui-datatable table tr.ui-datatable-selectable.ui-state-hover {
+			background-color: #f7f7f7;
+		}
+	
+/*	<w:commandButton> */
+/* ============================================================================================= */
+	/*	Reset to the default gray border for primary and secondary buttons */
+	.b-button.b-button--is-type_secondary:hover, 
+	.b-button.b-button--is-type_secondary:focus, 
+	.b-button.b-button--is-type_secondary:active {
+		border: 1px solid #cccccc;
+	}
+
+	/*	Reset to the default gray color for secondary buttons and avoid the white one which is set on wfaces theme */
+	.b-button.b-button--is-type_secondary.ui-state-hover,
+	.b-button.b-button--is-type_secondary.ui-state-focus {
+		background:	#f0f0f0;
+	}
+
+/* Customised icons for buttons within input elements */
+/* ===================================================================== */
+	.wf-button-fix--has-custom-question-icon.b-button-medium .b-icon {
+	    opacity: 0.7;
+	    background: url("/search/javax.faces.resource/images/icons/question.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+
+/*	<p:dialog> */
+/* ============================================================================================= */
+	/*	Override font style for buttons within dialog's header. 
+		w-faces seems to not consider this UC */
+	.b-modal-dialog__wrapper2 .b-modal-dialog__title .b-button {
+	    font-size: 1rem;
+	    font-weight: normal;
+	}
+	
+/*	<w:autoComplete> */
+/* ============================================================================================= */
+	/* Set box shadow as other overlayed components */
+	.ui-autocomplete-panel.ui-shadow {
+		box-shadow: 0 1px 5px rgba(0,0,0,0.4); /* As w-faces components	*/
+	}
+	
+	/* Avoid w-faces double outline on step w:validationPanel container. 
+		- This is a wrong reusing of CSS classes in w-faces. Consider to move it to the wfaces-custom.css to be a general fix */
+	.b-step .b-step__issue-group.b-drawer {
+		outline: none;
+		padding: 0 1px; /* allows internal lateral outline to be visible */
+	}	
+	
+/*	template drawer.xhtml */
+/* ============================================================================================= */
+	/*	Fixes the padding issue when a button is defined in the drawer actions */
+	.b-drawer .b-drawer__step {
+	    display: flex;
+   		justify-content: space-between;
+	}
+
+	.b-drawer .b-drawer__title-actions {
+		position: static;
+		padding-top: 0;
+	}
+	
+	/* Avoids right margin when only one button*/
+	.b-drawer .b-drawer__title-actions .b-button:last-child {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+/*	icons */
+/* ============================================================================================= */
+	/* Replace search icon */
+	.b-icon.b-icon--search {
+		background: url("/search/javax.faces.resource/images/icons/search.svg.jsf?ln=w-ps-cc") center center / contain no-repeat !important;
+		opacity: 0.7;
+	}
+
+
+/*	theme font */
+/* ============================================================================================= */
+/*	Avoids problem with some non-recognizable characters "()", "[]", "~" in the wfaces' default font */
+	textarea.query-text.b-input__text-area-input,
+	input.query-text.b-input__text-input,
+	.query-text {
+		font-family: sans-serif !important;
+	}

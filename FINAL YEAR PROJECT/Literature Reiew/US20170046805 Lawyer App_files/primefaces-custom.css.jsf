@@ -1,0 +1,641 @@
+/*	PRIMEFACES (jQuery) COMPONENTS STYLE OVERRIDING 
+	CSS classes in this section must be applied ONLY to PrimeFaces (jquery-ui) components and must be general.
+	Specific styling must be added in specific CSS files. */
+
+
+/*	jquery-ui icons */
+/*****************************************************************************/
+	/* 	Change the icons direction tu support RTL */
+	[dir=rtl] .ui-icon.ui-icon-seek-next,
+	[dir=rtl] .ui-icon.ui-icon-seek-prev {
+	    transform: rotateY(180deg);
+	    -webkit-transform: rotateY(180deg);
+	    -moz-transform: rotateY(180deg);
+	    -o-transform: rotateY(180deg);
+	    -ms-transform: rotateY(180deg);
+	}
+
+
+/* ============================================================================================= */
+/*	<p:tooltip> */
+/* ============================================================================================= */
+
+	/*	Modifiers */
+	/*************************************************************************/
+		/*	Override default background and font colors */
+		.white-tooltip.ui-tooltip .ui-tooltip-text {
+		    background-color: #fff;
+		    color: #4c4c4c;
+		}
+
+
+/* ============================================================================================= */
+/*	<p:overlayPanel> */
+/* ============================================================================================= */
+	/*	Avoids overlapping with other elements (ex: drawer's pointer arrow) */
+	.ui-overlaypanel {
+		z-index: 1200 !important;	
+	}
+	
+	.ui-overlaypanel .ui-overlaypanel-content {
+		padding: 0.5em .5em .6875em;
+	}
+
+
+/* ============================================================================================= */
+/*	<p:dataTable> */
+/* ============================================================================================= */
+	/*	Overrides the filter input width to take the available width */
+	.ui-datatable thead th.ui-filter-column input.ui-column-filter {
+		width: 100%;	
+	}
+	
+	/*	Set paginator and footer font-weight as WFaces header style */
+	.ui-datatable .ui-paginator .ui-paginator-current,
+	.ui-datatable .ui-datatable-footer {
+		font-weight: normal;
+	}
+	
+	/*	inner HTML table */
+	/*************************************************************************/
+		table.plain-table {
+			border-collapse: collapse;
+		    border-width: 1px;
+		    border-color: #ccc;
+		    border-style: solid;
+		    color: #808080 !important;
+		}
+		
+		table.plain-table > tbody, 
+		table.plain-table > thead, 
+		table.plain-table > thead .ui-widget-header,
+		table.plain-table > tfoot,
+		table.plain-table > tfoot .ui-widget-header {
+   			font-weight: normal;
+		}
+		
+		table.plain-table > tbody > tr > th,
+		table.plain-table > thead > tr > th,
+		table.plain-table > thead > tr > td {
+   			background-color: #f0f0f0;
+   			border: 1px solid #ccc !important;
+		}
+		
+		table.plain-table > tbody > tr,
+		table.plain-table > tbody > tr.ui-widget-content {
+			background: #fff;
+			color: inherit;
+		}
+		
+		table.plain-table > tbody > tr > td {
+			border-bottom: 1px solid #ccc !important;
+		}
+		
+		table.plain-table > thead > tr > th,
+		table.plain-table > thead > tr > td,
+		table.plain-table > tbody > tr > th, 
+		table.plain-table > tbody > tr > td {
+			padding: 1.125em .8751em 1.0626em !important;
+			font-weight: normal;
+		}
+		
+		table.plain-table tbody tr:hover {
+			background: #f7f7f7;
+		}
+		
+		table.plain-table tbody a {
+			color: #1a1a1a;
+		}
+
+	/*	Modifiers */
+	/*************************************************************************/
+		
+		/*	Fit content */
+		/*************************************************/
+		/*	The column width is set by the widest unbreakable content in the cells */
+		.fit-content.ui-datatable > .ui-datatable-tablewrapper > table {
+			table-layout: auto;
+		}
+
+/* ============================================================================================= */
+/* 	<p:columnToggler> */
+/* ============================================================================================= */
+	/* Align the checkbox icon to the center */
+	.ui-columntoggler-item .ui-chkbox-icon.ui-icon-check {
+    	background-position: -65px -145px;
+	}	
+
+
+/* ============================================================================================= */
+/*	<p:dataGrid> */
+/* ============================================================================================= */
+	/* Remove unnecessary pseudo elements */
+	.ui-datagrid .ui-datagrid-content.ui-grid:before, 
+	.ui-datagrid .ui-datagrid-content.ui-grid:after,
+	.ui-datagrid .ui-grid-row:after {
+		display: none;
+	}
+	
+	.ui-datagrid .ui-datagrid-header, 
+	.ui-datagrid .ui-datagrid-footer,
+	.ui-datagrid .ui-paginator {
+		font-weight: normal;
+	}
+	
+	/*	Borders */
+	/*************************************************************************/
+		/* 	Remove default border */
+		.ui-datagrid .ui-datagrid-content {
+			border: none; 
+		}
+			
+		/*	Set the border to the columns and the padding */
+		.ui-datagrid .ui-grid-row .ui-datagrid-column {
+			border: 1px solid #ccc;
+			padding: 1.5rem; 
+		}
+		
+		/*	Avoid double bottom borders */
+		.ui-datagrid .ui-grid-row:not(:last-child) .ui-datagrid-column {
+			border-bottom: none; 
+		}
+		
+		/*	Avoid double bottom borders when columns are wrapped */
+		@media (max-width: 640px) {
+			.ui-datagrid .ui-grid-row:last-child .ui-datagrid-column:not(:empty) + .ui-datagrid-column:not(:empty) {
+				border-top: none;
+			} 
+			
+			.ui-datagrid .ui-grid-row:last-child .ui-datagrid-column {
+/* 				border-bottom: none; */
+			}
+			
+			.ui-datagrid .ui-grid-row:last-child .ui-datagrid-column:not(:empty) {
+/* 				border-bottom: 1px solid #ccc; */
+			}
+		}
+		
+		/*	Avoid double borders when columns are not wrapped */
+		@media screen and (min-width: 641px) {
+			.ui-datagrid .ui-grid-row .ui-datagrid-column:not(:last-child) {
+				border-right: none;
+			}
+			
+			[dir=rtl] .ui-datagrid .ui-grid-row .ui-datagrid-column:not(:last-child) {
+				border-right: 1px solid #ccc;
+				border-left: none;
+			}
+		}
+	
+	/*	Modifiers */
+	/*************************************************************************/
+		/*	No-background */
+		.no-background.ui-datagrid .ui-datagrid-content {
+			background: transparent;
+		}
+		
+		/*	No-border */
+		/*************************************************/
+		/*	Remove borders and padding from columns */
+		.no-border.ui-datagrid .ui-grid-row .ui-datagrid-column {
+			border: none !important;
+			padding: 0; 
+		}
+		
+		/*	Add top padding between columns when wrapped */
+		@media (max-width: 640px) {
+			/*	Hide last row empty columns when wrapped to not take extra space at the end */
+			.ui-datagrid .ui-grid-row:last-child .ui-datagrid-column:empty {
+				display: none;
+			}
+			
+			.no-border.ui-datagrid .ui-grid-row .ui-datagrid-column {
+				padding-top: 0.75rem; 
+			}
+			
+			/*	Avoid padding on first column */
+			.no-border.ui-datagrid .ui-grid-row:first-child .ui-datagrid-column:first-child {
+				padding-top: 0;
+			}
+			
+		}
+		
+		/*	Add padding between columns when not wrapped */
+		@media screen and (min-width: 641px) {
+			.no-border.ui-datagrid .ui-grid-row .ui-datagrid-column:not(:last-child) {
+				padding-right: 1.5rem;
+			}
+			
+			[dir=rtl] .no-border.ui-datagrid .ui-grid-row .ui-datagrid-column:not(:last-child) {
+				padding-left: 1.5rem;
+				padding-right: 0;
+			}
+		}
+		
+		
+/* ============================================================================================= */
+/*	<p:dataList> */
+/* ============================================================================================= */
+	.ui-datalist.ui-widget {
+		display: flex;
+		flex-flow: column;
+	}
+	
+	.ui-datalist.ui-widget .ui-datalist-content {
+		border: none;
+		outline: 1px solid #ccc;
+	}
+	
+	.ui-datalist.ui-widget .ui-widget-content, 
+	.ui-datalist.ui-widget .ui-widget-content * {
+		color: #666666;
+	}
+	
+	.ui-datalist.ui-widget .ui-datalist-header,
+	.ui-datalist.ui-widget .ui-datalist-footer,
+	.ui-datalist.ui-widget .ui-paginator.ui-paginator-top,
+	.ui-datalist.ui-widget .ui-paginator.ui-paginator-bottom {
+		font-weight: normal;
+   		line-height: 18px;
+	    border: none;
+	    outline: 1px solid #ccc;
+	}
+	
+	.ui-datalist.ui-widget .ui-datalist-header {
+		padding: 1rem;
+	} 
+	
+	.ui-datalist.ui-widget .ui-datalist-data {
+		margin: 0;
+	}
+	
+	.ui-datalist.ui-widget .ui-datalist-data .ui-datalist-item {
+		padding: 0.5rem 1rem;
+	}
+	
+	.ui-datalist.ui-widget .ui-datalist-data .ui-datalist-item:hover {
+		background-color: #f7f7f7;
+	}
+	
+	/*	Modifiers */
+	/*************************************************************************/
+		/*	Is flow row, displays the items in rows and wraps when necessary */
+		/*************************************************/
+			.is-flow--row.ui-datalist.ui-widget .ui-datalist-data {
+			    display: flex;
+	   			flex-wrap: wrap;
+	   			margin: 0.5rem;
+			}
+			
+			.is-flow--row.ui-datalist.ui-widget .ui-datalist-data .ui-datalist-item {
+				margin: 0.5rem;
+				padding: 0;
+			}
+		
+		/*	Bordered items */
+		/*************************************************/
+			.bordered-items.ui-datalist.ui-widget:not(.is-flow--row) .ui-datalist-data > .ui-datalist-item + .ui-datalist-item {
+				border-top: 1px solid #ccc;
+			}
+		
+		/*	No background */
+		/*************************************************/
+			.no-background.ui-datalist.ui-widget .ui-datalist-content {
+				background: none;
+			}
+		
+		
+		/*	No border */
+		/*************************************************/
+			/*	Remove outline */
+			.no-border.ui-datalist.ui-widget .ui-datalist-content {
+				outline: none;
+			}
+			
+			/*	Remove outer margin */
+			.no-border.ui-datalist.ui-widget .ui-datalist-data {
+				margin: 0;
+			}
+			
+			/*	Adapt margin of items */
+			.no-border.ui-datalist.ui-widget .ui-datalist-data .ui-datalist-item {
+				margin: 0.125rem 0.875rem 0.875rem 0.125rem;
+			}
+			
+			[dir=rtl] .no-border.ui-datalist.ui-widget .ui-datalist-data .ui-datalist-item {
+				margin-right: 0;
+				margin-left: 1rem;
+			}
+		
+/* ============================================================================================= */
+/*	<p:panelGrid> */
+/* ============================================================================================= */
+	/*	Overrides default border */
+	.ui-panelgrid .ui-panelgrid-content.ui-grid.ui-widget-content,
+	.ui-panelgrid.ui-noborder .ui-panelgrid-content .ui-panelgrid-cell {
+		border: none;
+	}
+		
+	/*	Overrides default padding */
+	.ui-panelgrid .ui-panelgrid-content .ui-panelgrid-cell {
+ 		padding: 0;
+	}
+	
+	/*	Modifiers */
+	/*************************************************************************/
+		/* No background*/
+		/*************************************************/
+		.no-background.ui-panelgrid .ui-panelgrid-content.ui-grid.ui-widget-content {
+			background: none;
+		}
+		
+		/* Within margin */
+		/*************************************************/
+			.has--margin-within.ui-panelgrid .ui-panelgrid-cell:not(:last-child) {
+				margin-right: 1rem;
+			}
+			
+			[dir=rtl] .has--margin-within.ui-panelgrid .ui-panelgrid-cell:not(:last-child) {
+				margin-right: 0;
+				margin-left: 1rem;
+			}
+			
+			.has--margin-within.ui-panelgrid .ui-grid-row .ui-panelgrid-cell {
+				margin-bottom: 1rem;
+			}
+			
+/* ============================================================================================= */	
+/*	<p:outputPanel> */
+/* ============================================================================================= */
+
+	/*	Modifiers */
+	/*************************************************************************/
+		/*	No default loading gif */
+		/*************************************************/
+		/*	Hide the outputpanel's default loading gif to not overlap the wfaces loading gif */
+		.no-pf-default-loading.ui-outputpanel .ui-outputpanel-loading {
+			background: none;
+		}
+
+/* ============================================================================================= */
+/*	<p:tabMenu> */
+/* ============================================================================================= */
+	.ui-tabmenu.ui-widget  {
+		border: none;
+		background: none;
+		font-size: 1rem;
+		margin-bottom: 1rem;
+	}
+	
+	.ui-tabmenu.ui-widget .ui-tabmenu-nav {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0;
+		background: none;
+		line-height: 1.1875rem;
+	}
+	
+	.ui-tabmenu.ui-widget .ui-tabmenu-nav.ui-widget-header, 
+	.ui-tabmenu.ui-widget .ui-tabmenu-nav .ui-state-default, 
+	.ui-tabmenu.ui-widget .ui-tabmenu-nav .ui-state-default a,
+	.ui-tabmenu.ui-widget .ui-tabmenu-nav .ui-state-default a:link, 
+	.ui-tabmenu.ui-widget .ui-tabmenu-nav .ui-state-default a:visited {
+		color: inherit;
+	}
+	
+	.ui-tabmenu.ui-widget .ui-tabmenu-nav .ui-tabmenuitem {
+		display: flex;
+		float: none;
+		outline: 1px solid #ccc;
+		border: none;
+		margin: 0;
+		top: 0;
+	}
+	
+	.ui-tabmenu.ui-widget .ui-tabmenu-nav .ui-tabmenuitem:focus {
+	    outline: 1px solid #1a1a1a;
+	    z-index: 1;
+	}
+	
+	.ui-tabmenu.ui-widget .ui-tabmenu-nav .ui-tabmenuitem a {
+		padding: 1.125rem 1.3125rem;
+	}
+	
+	.ui-tabmenu.ui-widget .ui-tabmenu-nav.ui-helper-reset.ui-helper-clearfix:after {
+		content: none;
+	}	
+	
+	
+	/*	Modifiers */
+	/*************************************************************************/
+	
+		/*	Plain menu */
+		/*************************************************/
+		.ps-tabmenu--is-plain.ui-tabmenu.ui-widget .ui-tabmenu-nav .ui-tabmenuitem {
+			outline: none;
+			background: none;
+		}
+		
+		.ps-tabmenu--is-plain.ui-tabmenu.ui-widget .ui-tabmenu-nav .ui-tabmenuitem:not(:last-child) {
+			margin-right: 0.5rem;
+		}
+		
+		[dir=rtl] .ps-tabmenu--is-plain.ui-tabmenu.ui-widget .ui-tabmenu-nav .ui-tabmenuitem:not(:last-child) {
+			margin-right: 0;
+			margin-left: 0.5rem;
+		}
+		
+		.ps-tabmenu--is-plain.ui-tabmenu.ui-widget .ui-tabmenu-nav .ui-tabmenuitem .ui-menuitem-link {
+			padding: 0.5rem 0.5rem 0.25rem;
+			float: none;
+			border-bottom: 0.5rem solid #ccc;
+		}
+		
+		.ps-tabmenu--is-plain.ui-tabmenu.ui-widget .ui-tabmenu-nav .ui-tabmenuitem.ui-state-active .ui-menuitem-link {
+			opacity: 1;
+			border-bottom: 0.5rem solid #52a7c0;
+		}
+	
+/* ============================================================================================= */
+/*	<p:tabView> */
+/* ============================================================================================= */		
+	.ui-tabs.ui-widget  {
+		border: none;
+		background: none;
+		padding: 0;
+		margin-bottom: 1rem;
+	}
+	
+	.ui-tabs.ui-widget.ui-tabs-top > .ui-tabs-nav {
+		padding: 0;
+	}
+	
+	.ui-tabs.ui-widget .ui-tabs-nav {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0;
+		background: none;
+		line-height: 1.1875rem;
+		margin-bottom: 1rem;
+	}
+	
+	.ui-tabs.ui-widget .ui-tabs-nav.ui-widget-header,
+	.ui-tabs.ui-widget .ui-tabs-nav.ui-widget-header .ui-state-default, 
+	.ui-tabs.ui-widget .ui-tabs-nav.ui-widget-header .ui-state-default a,
+	.ui-tabs.ui-widget .ui-tabs-nav.ui-widget-header .ui-state-default a:link, 
+	.ui-tabs.ui-widget .ui-tabs-nav.ui-widget-header .ui-state-default a:visited {
+		color: inherit;
+	}
+	
+	.ui-tabs.ui-widget ul.ui-tabs-nav > li {
+		display: flex;
+		float: none;
+		outline: 1px solid #ccc;
+		border: none;
+		margin: 0;
+		top: 0;
+	}
+	
+	.ui-tabs.ui-widget .ui-tabs-nav > li:focus {
+	    outline: 1px solid #1a1a1a;
+	    z-index: 1;
+	}
+	
+	.ui-tabs.ui-widget ul.ui-tabs-nav li > a {
+		float: none;
+		padding: 1.125rem 1.3125rem;
+	}
+	
+	.ui-tabs.ui-widget .ui-tabs-panel {
+		padding: 0;
+	}
+	
+	/*	States */
+	/*************************************************************************/
+		
+		/*	Disabled */
+		/*************************************************/
+		.ui-tabs.ui-tabs-top>.ui-tabs-nav li.ui-state-disabled {
+			opacity: 1;
+		}
+		
+		.ui-tabs.ui-tabs-top>.ui-tabs-nav li.ui-state-disabled a {
+			opacity: 0.35; /* wfaces theme default */
+		}
+		
+	/*	Modifiers */
+	/*************************************************************************/
+	
+		/*	Plain tab */
+		/*************************************************/	
+		.ps-tabview--is-plain.ui-tabs.ui-widget .ui-tabs-nav li {
+			background: none;
+			outline: none;
+		}
+		
+		.ps-tabview--is-plain.ui-tabs.ui-widget .ui-tabs-nav li:not(:last-child) {
+			margin-right: 0.5rem;
+		}
+		
+		[dir=rtl] .ps-tabview--is-plain.ui-tabs.ui-widget .ui-tabs-nav li:not(:last-child) {
+			margin-right: 0;
+			margin-left: 0.5rem;
+		}
+		
+		.ps-tabview--is-plain.ui-tabs.ui-widget .ui-tabs-nav li > a {
+			padding: 0.5rem 0.5rem 0.25rem;
+			border-bottom: 0.5rem solid #ccc;
+		}
+		
+		.ps-tabview--is-plain.ui-tabs.ui-widget .ui-tabs-nav li.ui-state-active > a {
+			opacity: 1;
+			border-bottom: 0.5rem solid #52a7c0;
+		}
+/* ============================================================================================= */
+/*	<p:messages> */
+/* ============================================================================================= */		
+	.ui-messages {
+		margin-bottom: 1rem;
+	}
+	
+	.ui-messages > div + div {
+		margin-top: 1px !important;
+	}
+	
+	.ui-messages .ui-messages-error,
+	.ui-messages .ui-messages-info,
+	.ui-messages .ui-messages-warn,
+	.ui-messages .ui-messages-fatal {
+		color: #1a1a1a;
+		padding: 0;
+    	margin: 0;
+    	border: none;
+   	    outline: 1px solid #ccc;
+	}
+	
+	/* Hides icons shown by default */
+	.ui-messages .ui-messages-warn-icon,
+	.ui-messages .ui-messages-error-icon,
+	.ui-messages .ui-messages-info-icon,
+	.ui-messages .ui-messages-fatal-icon {
+		display: none;
+	}
+	
+	.ui-messages > div > ul,
+	.ui-messages.ui-messages-noicon > div > ul {
+	    border: none !important;
+    	margin: 0;
+    	padding: 0 0 0 1.5rem;
+	}
+	
+	[dir=rtl] .ui-messages > div > ul {
+		padding: 0 1.5rem 0 0;
+	}
+	
+	.ui-messages .ui-messages-error ul,
+	.ui-messages .ui-messages-fatal ul {
+	    background-color: #ff8787 !important;
+	}
+	
+	.ui-messages .ui-messages-info ul {
+	    background-color: transparent !important;
+	}
+	
+	.ui-messages .ui-messages-warn ul {
+	    background-color: #ffdf97 !important;
+	}
+	
+	.ui-messages ul > li {
+		padding: 1rem;
+    	background-color: #fff;
+    	outline: 1px solid #ccc;
+	}
+	
+	/*	Avoid double border when more than one msg per severity	*/
+	.ui-messages ul > li + li {
+		margin-top: 1px;
+	}
+	
+	.ui-messages .ui-messages-error-summary,
+	.ui-messages .ui-messages-error-detail,
+	.ui-messages .ui-messages-warn-summary,
+	.ui-messages .ui-messages-warn-detail,
+	.ui-messages .ui-messages-info-summary,
+	.ui-messages .ui-messages-info-detail,
+	.ui-messages .ui-messages-fatal-summary,
+	.ui-messages .ui-messages-fatal-detail {
+		font-weight: normal;
+	}
+	
+	.ui-messages ul > li > span {
+		margin: 0;
+	}
+	
+	.ui-messages ul > li > span + span {
+		margin-left: 1rem;
+	}
+	
+	[dir=rtl] .ui-messages ul > li > span + span {
+		margin-left: 1rem;
+		margin-right: 0;
+	}

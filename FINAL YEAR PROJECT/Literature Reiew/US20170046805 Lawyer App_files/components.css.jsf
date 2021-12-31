@@ -1,0 +1,766 @@
+/* ============================================================================================= */
+/*	Subtitle section inside page-header template
+/* ============================================================================================= */
+	.ps-page-header--subtitle {
+		display: flex;
+    	justify-content: space-between;
+		margin: 0.5rem 0 1rem;
+    	font-size: 2rem; /* 32px as the step title */
+    	line-height: 1.3125; /* 42px as the step title */
+	}
+	
+	.ps-page-header--subtitle .ps-page-header--subtitle--text {
+		flex: 1 1 0;
+		white-space: normal;
+    	letter-spacing: 0.0625em;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	
+	.ps-page-header--subtitle .ps-page-header--subtitle--actions {
+		display: flex;
+    	justify-content: flex-end;
+    	align-items: flex-start;
+	}
+	
+	.ps-page-header--subtitle .ps-page-header--subtitle--actions:not(:empty) {
+		margin-left: 2rem;
+	}
+	
+	[dir=rtl] .ps-page-header--subtitle .ps-page-header--subtitle--actions {
+		margin-left: 0;
+		margin-right: 2rem;
+	}
+
+/* ============================================================================================= */
+/*	Separator
+/* ============================================================================================= */
+	.ps-separator {
+		border: 0; /* reset the default border properties */
+		border-bottom: 1px solid #ccc; /* define only the top border */
+		margin: 1rem 0;
+	}
+
+
+/* ============================================================================================= */
+/*	Processing indicator */
+/* ============================================================================================= */	
+	.ps-processing {
+		display: flex;
+	    justify-content: center;
+	}
+
+
+/* ============================================================================================= */
+/*	PScope MODAL PANEL on Primefaces <p:overlayPanel>	*/
+/* ============================================================================================= */
+	/* Overrides wf-modal definition */
+	.ps-modal.ui-overlaypanel {
+	    outline: 1px solid #CCCCCC;
+	    border: none;
+	}
+	
+	.ps-modal.ui-overlaypanel.ui-shadow {
+	    box-shadow: 0 1px 5px rgba(0,0,0,0.4); /* As w-faces components*/
+	}	
+	
+	/* ============================================================================================== */
+	/*	PScope MODAL PANEL - ARROWS	*/
+	/*	TODO: Arrow classes should be set to the overlaypanel component 
+			  based on its position before rendering 
+	/* ============================================================================================== */
+	
+	.ps-modal.ps-modal--arrow-bottom:after, 
+	.ps-modal.ps-modal--arrow-bottom:before {
+		content: " ";
+		top: 100%;
+		left: 50%;
+		border: solid transparent;
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+	
+	.ps-modal.ps-modal--arrow-bottom:after {
+		border-color: transparent;
+		border-top-color: #FFFFFF;
+		border-width: 5px;
+		margin-left: -5px;
+	}
+	
+	.ps-modal.ps-modal--arrow-bottom:before {
+		border-color: transparent;
+		border-top-color: #cccccc;
+		border-width: 6px;
+		margin-left: -6px;
+	}
+	
+
+/* ============================================================================================= */
+/*	PScope TOOLTIP on Primefaces <p:tooltip>	*/
+/* ============================================================================================= */
+	.ps-tooltip.ui-tooltip {
+		
+	}
+	
+	/*	Tooltip arrow */
+	.ps-tooltip.ui-tooltip-right .ui-tooltip-arrow{
+	    border-right-color: #fff;
+	}
+	
+	.ps-tooltip.ui-tooltip-left .ui-tooltip-arrow{
+	    border-left-color: #fff;
+	}
+	
+	.ps-tooltip.ui-tooltip-bottom .ui-tooltip-arrow{
+	    border-bottom-color: #fff;
+	}
+	
+	.ps-tooltip.ui-tooltip-top .ui-tooltip-arrow{
+	    border-top-color: #fff;
+	}
+	
+	/* Tooltip content */
+	.ps-tooltip.ui-tooltip .ui-tooltip-text {
+	    outline: 1px solid #CCCCCC;
+		background-color: #FFFFFF;
+	    color: #1a1a1a; /* As w-faces inputs */
+	    padding: 1em 1.5em;
+	}
+	
+	.ps-tooltip.ui-tooltip .ui-shadow {
+		box-shadow: 0 1px 5px rgba(0,0,0,0.4); /* As w-faces components
+/* 	    box-shadow: 0 3px 6px #ccc; *//* As defined in pscope designs */
+	}
+
+/* ============================================================================================= */
+/*	RESULT LIST PAGINATOR	*/
+/* ============================================================================================= */
+	
+	.ps-paginator {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.ps-paginator-bottom {
+		display: flex;
+		justify-content: center;
+		margin-top: 0.5rem;
+		color: #666666;
+	}
+	
+	.ps-paginator .ps-paginator--page {
+		margin: 0 0.5rem 0 1rem;
+	}
+	
+	[dir=rtl] .ps-paginator .ps-paginator--page {
+		margin: 0 1rem 0 0.5rem;
+	}
+	
+	.ps-paginator--page .ps-paginator--page--select {
+	    display: flex;
+		align-items: center;
+		cursor: pointer;
+		text-decoration: none;
+	}
+	
+	/* hack to display an space between the overlaypanel and and not right above together with the negative */
+	.ps-paginator--page .ps-paginator--page--select {
+		padding-top: 0.5rem;
+    	margin-top: -0.5rem;
+	}
+	
+	.ps-paginator--page--select:focus,
+	.ps-paginator--page--select:hover {
+	    color: #1a1a1a;
+	}
+	
+	.ps-paginator--page--select:hover .ps-paginator--page--icon,
+	.ps-paginator--page--select:focus .ps-paginator--page--icon {
+		opacity: 1;
+	}
+	
+	.ps-paginator--page .ps-paginator--page--value {
+		display: flex;
+	}
+	
+	.ps-paginator--page .ps-paginator--page--icon  {
+		margin-left: 0.25rem;
+	}
+	
+	.ps-paginator--page .ps-paginator--page--error {
+		border: none !important;
+		background-color: #f7f7f7 !important;
+		margin-right: 7px;
+	}
+	
+	[dir=rtl] .ps-paginator--page .ps-paginator--page--icon  {
+		margin-left: 0;
+		margin-right: 0.25rem;
+	}
+
+/* ============================================================================================= */
+/*	RESULT LIST PAGINATOR MODAL	*/
+/* ============================================================================================= */
+	
+	.ps-paginator-modal.ui-overlaypanel .ui-overlaypanel-content {
+		padding: 1rem .5rem .5rem;
+	}
+	
+	.ps-paginator-modal--input {
+      	outline: 1px solid #CCCCCC;
+      	border: 0;
+        padding: 0.75rem 0.25rem;
+    	margin: 0 1.125rem;
+    	line-height: inherit;
+    	text-align: center;
+	}
+	
+	.ps-paginator-modal--input:focus {
+	    z-index: 1;
+    	outline: 2px solid #52a7c0;
+	}
+	
+	.ps-paginator-modal--button {
+	}
+
+/* ============================================================================================= */
+/*	EDIT PANEL - Container for resizable w:selectOneMenu */
+/* ============================================================================================= */
+/*	- Allows 3 inputs per row as wfaces. It requires the definitions of the 'flex-grow' and 
+		'min-width' for its children (.first-slot, .second-slot, .third-slot) 
+	- TODO - Improve children definition */
+	.ps-editpanel {
+		margin-top: 0.75em;
+		margin-bottom: 1.5em;
+	}
+	
+	.ps-editpanel--section {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.ps-editpanel .ps-editpanel--section > div {
+       	flex-basis: 0;
+       	min-width: 21em; /* Necessary to avoid unwanted wrapping in IE11 */
+	}
+	
+	/*	as w:editpanel header and footer facet */
+	.ps-editpanel .ps-editpanel--header,
+	.ps-editpanel .ps-editpanel--footer {
+		outline: 1px solid #ccc;
+	    padding: 0.75rem 1rem;
+	    background-color: #f0f0f0;
+	    font-size: 0.875rem;
+	    line-height: 1.5rem;
+	}
+
+/* ============================================================================================= */
+/*	PLAIN SELECT on JSF <h:selectOneMenu>	*/
+/* ============================================================================================= */
+	.ps-plain-select {
+		display: flex;
+		align-items: center;
+	    box-sizing: border-box;
+	    white-space: nowrap;
+	    font-family: 'simplon',arial,meiryo,sans-serif;
+	    color: #666666;
+	}
+	
+	.ps-plain-select .ps-plain-select--label {
+	    font-weight: 500;
+	    padding-right: 0.25rem;
+	}
+	
+	[dir=rtl] .ps-plain-select .ps-plain-select--label {
+		padding-right: 0;
+		padding-left: 0.25rem;
+	}
+	
+	.ps-plain-select select.ps-plain-select--input, 
+	.ps-plain-select select.ps-plain-select--input-helper {
+	    border: none;
+		background-image: url("/search/javax.faces.resource/images/icons/small-arrow-down.svg.jsf?ln=w-ps-cc");
+		background-repeat: no-repeat;
+		background-position: right 50%;
+		background-color: transparent;
+	    -webkit-appearance: none;
+	    -moz-appearance: none;
+	    appearance: none;
+		padding-right: 1rem;
+	    cursor: pointer;
+	}
+	
+	[dir=rtl] .ps-plain-select select.ps-plain-select--input, 
+	[dir=rtl] .ps-plain-select select.ps-plain-select--input-helper {
+		padding-right: 0;
+		padding-left: 1rem;
+		background-position: left 45%; 
+	}
+	
+	/*	IE non-standard feature allowing to hide the arrow*/
+	.ps-plain-select select.ps-plain-select--input::-ms-expand {
+	    display: none;
+	}
+	
+	.ps-plain-select select.ps-plain-select--input-helper {
+		display: none;
+	}
+
+	/* ============================================================================================= */
+	/*		PLAIN SELECT - STATES	*/
+	/* ============================================================================================= */
+	.ps-plain-select select.ps-plain-select--input:focus {
+		outline: none;
+		color: #1a1a1a;
+	}
+	
+	/* ============================================================================================= */
+	/*		PLAIN SELECT - MODIFIERS	*/
+	/* ============================================================================================= */
+		/* ----------------------------------------------------------------------------------------- */
+		/* DISABLED	*/
+		/* ----------------------------------------------------------------------------------------- */
+		.ps-plain-select .ps-plain-select--is-disabled {
+			opacity: 0.5;
+			cursor: default;
+			pointer-events: none;
+		}
+	
+/* ============================================================================================= */
+/*	BUTTONS BAR	*/
+/* ============================================================================================= */	
+	.ps-buttons-bar {
+		display: flex;
+	}
+	
+	.ps-buttons-bar--item {
+	}
+
+/* ============================================================================================= */
+/*	BUTTON - wraps a link and style it as a button  */
+/* ============================================================================================= */	
+
+	.ps-button {
+    	display: flex;
+    	align-items: center;
+    	justify-content: center;
+		background-color: #F0F0F0;
+		outline: 1px solid #CCCCCC;
+	    min-width: 48px;
+    	min-height: 48px;
+    	cursor: pointer;
+	}
+	
+	.ps-button a {
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    width: 100%;
+	    height: 100%;
+	    padding: 0.75rem;
+	    line-height: 1.5rem;
+	    text-decoration: none;
+	}
+	
+	/* ============================================================================================= */
+	/*		BUTTON - STATES	*/
+	/* ============================================================================================= */
+	
+		.ps-button:hover .icon-wrapper,
+		.ps-button:focus-within .icon-wrapper {
+			opacity: 1;
+		}
+		
+		.ps-button:focus-within {
+			outline: 1px solid #1a1a1a;
+			z-index: 1;
+		}
+		
+/* ============================================================================================= */
+/*	PLAIN BUTTON on HTML button */
+/* ============================================================================================= */	
+
+	.ps-plain-button {
+		display: flex;
+		align-items: center;
+	 	border: none;
+		background: none;
+		padding: 0;
+		color: #666666;
+		white-space: nowrap;
+	}
+	
+	/* ============================================================================================= */
+	/*		PLAIN BUTTON - STATES	*/
+	/* ============================================================================================= */
+		/*	Prevent browser's default */
+		.ps-plain-button:focus {
+			outline: none;
+		}
+		
+		/*	Set font color when hover */
+		.ps-plain-button:hover, .ps-plain-button:focus {
+			color: #1a1a1a;
+		}
+		
+		.ps-plain-button:hover .icon-wrapper,
+		.ps-plain-button:focus .icon-wrapper {
+			opacity: 1;
+		}
+		
+		.ps-plain-button:disabled {
+			opacity: 0.5;
+			cursor: default;
+			pointer-events: none;
+		}
+
+/* ============================================================================================= */
+/*	MENU TOGGLEABLE on HTML button (trigger) and p:menu toggleable */
+/* ============================================================================================= */	
+	.ps-menu-toggleable {
+		
+	}
+
+	.ps-menu-toggleable--button {
+	
+	}
+	
+	/*	toggleable menu list container	*/
+	.ps-menu-toggleable--menu.ui-menu {
+		padding: 0;
+		border: none;
+		width: auto;
+		white-space: nowrap;
+	}
+	
+	/* 	all menu items */
+	.ps-menu-toggleable--menu.ui-menu .ui-menu-list li {
+	    margin: 0;
+	    border: none;
+	    color: #666666;
+	    font-size: 1rem;
+	    line-height: 1.1875rem;
+/* 	    font-size: 1.125rem; 18px */
+/* 	    line-height: 1.375rem; for 18px */
+	    outline: 1px solid #666666;
+	    background: #FFFFFF;
+	}
+	
+	/*	makes all elements to take the full width */
+	.ps-menu-toggleable--menu.ui-menu li.ui-widget-header,
+	.ps-menu-toggleable--menu.ui-menu li.ui-widget-header h3,
+	.ps-menu-toggleable--menu.ui-menu li.ui-menuitem .ui-menuitem-link {
+		width: 100%;
+	}
+	
+	/*	submenu */
+	.ps-menu-toggleable--menu.ui-menu .ui-menu-list li.ui-widget-header h3 {
+		display: flex;
+		justify-content: space-between;
+	    align-items: center;
+	    padding: 1rem 1rem 0.8125rem;
+		/*padding: 0.875rem 1rem 0.8125rem;*/ /* as design spec for 18px font => top:14px, bottom: 13px, left,right:16px */
+		font-weight: normal;
+	}
+	
+	/* 	all menu item's links */
+	.ps-menu-toggleable--menu.ui-menu .ui-menuitem .ui-menuitem-link {
+		display: flex;
+		padding: 0;
+		border: none;
+		color: inherit;
+		line-height: inherit;
+		padding: 1rem 1rem 0.8125rem; /* for 16px font */
+	    /*padding: 0.875rem 1rem 0.8125rem;*/ /* as design spec for 18px font => top:14px, bottom: 13px, left,right:16px */
+	}
+	
+	.ps-menu-toggleable--menu.ui-menu .ui-menuitem.ui-submenu-child .ui-menuitem-link {
+		padding-left: 2rem;
+		padding-right: 1rem;
+	}
+	
+	[dir=rtl] .ps-menu-toggleable--menu.ui-menu .ui-menuitem.ui-submenu-child .ui-menuitem-link {
+		padding-left: 1rem;
+		padding-right: 2rem;
+	}
+	
+	/*	specificity is important in this selector */
+	.ps-menu-toggleable--menu.ui-menu li.ui-widget-header h3 .ui-icon {
+	    order: 99;
+	    position: static;
+	    left: 0;
+	    top: 0;
+	    margin-top: 0;
+	}
+	
+	/* ========================================================================================= */
+	/*		MENU TOGGLEABLE - STATES	*/
+	/* ========================================================================================= */
+	.ps-menu-toggleable--menu.ui-menu li.ui-widget-header.ui-state-hover,
+	.ps-menu-toggleable--menu.ui-menu li.ui-menuitem .ui-menuitem-link.ui-state-hover,
+	.ps-menu-toggleable--menu.ui-menu li.ui-submenu-child .ui-menuitem-link.ui-state-hover {
+		color: #1a1a1a;
+		background-color: #F0F0F0;
+	}
+	
+	.ps-menu-toggleable--menu.ui-menu li.ui-widget-header.ui-state-hover .ui-icon {
+		opacity: 1;
+	}
+	
+	/* ========================================================================================= */
+	/*	Arrow icon handling: primefaces icon is replaced by a background svg icon.
+	/* ========================================================================================= */
+		.ps-menu-toggleable--menu.ui-menu .ui-widget-header .ui-icon.ui-icon-triangle-1-s {
+			background: url("/search/javax.faces.resource/images/icons/small-arrow-down.svg.jsf?ln=w-ps-cc") center no-repeat;
+			opacity: 0.7;
+		}
+		
+		.ps-menu-toggleable--menu.ui-menu .ui-widget-header .ui-icon.ui-icon-triangle-1-e {
+			background: url("/search/javax.faces.resource/images/icons/small-arrow-down.svg.jsf?ln=w-ps-cc") center no-repeat;
+			opacity: 0.7;	
+			transform: rotate(-90deg);
+        	-webkit-transform: rotate(-90deg);
+	    	-moz-transform: rotate(-90deg);
+	    	-o-transform: rotate(-90deg);
+	    	-ms-transform: rotate(-90deg);	
+		}
+		
+		[dir=rtl] .ps-menu-toggleable--menu.ui-menu .ui-widget-header .ui-icon.ui-icon-triangle-1-e {
+			 transform: rotate(90deg);
+        	-webkit-transform: rotate(90deg);
+	    	-moz-transform: rotate(90deg);
+	    	-o-transform: rotate(90deg);
+	    	-ms-transform: rotate(90deg);
+		}
+	
+	.ps-menu-toggleable--menu.ui-menu.ui-shadow {
+		box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+	}
+	
+/* ============================================================================================= */
+/*	Drawer trigger
+	- Component allowing the display of drawers from any clickable element */
+/* ============================================================================================= */
+	.ps-drawer-trigger {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+	}
+	
+	.ps-drawer-trigger a {
+		text-decoration: none;
+	}
+	
+	.ps-drawer-trigger:focus *,
+	.ps-drawer-trigger:hover * {
+		color: #1a1a1a;
+	}
+	
+/* ============================================================================================= */
+/*	LINK WITH ICON is helper CSS class for links containing icons.*/ 
+/* ============================================================================================= */	
+	.ps-link--has-icon {
+		display: inline-flex;
+		align-items: center;
+	}
+	
+	.ps-link--has-icon:hover .icon-wrapper,
+	.ps-link--has-icon:focus .icon-wrapper {
+		opacity: 1;
+	}
+	
+	.ps-link--has-icon .icon-wrapper {
+		order: -1; /* ensure the icon is displayed before the text */
+	}
+	
+	.ps-link--has-icon .icon-wrapper:not(:only-child) {
+		margin-right: 0.5rem;
+	}
+	
+	[dir=rtl] .ps-link--has-icon .icon-wrapper:not(:only-child) {
+		margin-right: 0;
+		margin-left: 0.5rem;
+	}
+
+
+/* ============================================================================================= */
+/*	LINK UNDERLINED	*/
+/* ============================================================================================= */	
+	.ps-link--is-underlined {
+		text-decoration: underline !important;
+	}	
+
+	
+/* ============================================================================================= */
+/*	ICONS	*/
+/* ============================================================================================= */
+	/* icon wrapper */
+	.icon-wrapper {
+	    display: block;
+	    opacity: 0.7;
+	    min-width: 24px;
+	    min-height: 24px;
+	}
+	
+	/*	icon wrapper states */
+	/*************************************************************************/
+	.icon-wrapper:hover {
+		opacity: 1;
+	}
+	
+	/*	icon wrapper modifiers */
+	/*************************************************************************/
+		.icon-wrapper.icon-wrapper--is-16 {
+		    min-width: 16px;
+		    min-height: 16px;
+		}
+		
+		.icon-wrapper.icon-wrapper--is-12 {
+		    min-width: 12px;
+		    min-height: 12px;
+		}
+	
+	/* Available icons */
+	/*************************************************************************/
+	.analytics-icon {
+	    background: url("/search/javax.faces.resource/images/icons/analytics.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.chevron-left-icon {
+	    background: url("/search/javax.faces.resource/images/icons/chevron-left.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.chevron-right-icon {
+	    background: url("/search/javax.faces.resource/images/icons/chevron-right.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.chevron-up-icon {
+	    background: url("/search/javax.faces.resource/images/icons/chevron-up.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.double-chevron-left-icon {
+	    background: url("/search/javax.faces.resource/images/icons/double-chevron-left.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.double-chevron-right-icon {
+		background: url("/search/javax.faces.resource/images/icons/double-chevron-right.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.query-tree-icon {
+	    background: url("/search/javax.faces.resource/images/icons/query-tree.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.question-icon {
+	    background: url("/search/javax.faces.resource/images/icons/question.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.rss-icon {
+	    background: url("/search/javax.faces.resource/images/icons/rss.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.small-arrow-down-icon {
+		background: url("/search/javax.faces.resource/images/icons/small-arrow-down.svg.jsf?ln=w-ps-cc") center no-repeat;
+	}
+	
+	.columns-icon {
+		background: url("/search/javax.faces.resource/images/icons/columns.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.list-icon {
+		background: url("/search/javax.faces.resource/images/icons/list.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.external-link-icon {
+		background: url("/search/javax.faces.resource/images/icons/external-link.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.circle-minus-icon {
+		background: url("/search/javax.faces.resource/images/icons/circle-minus.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.circle-plus-icon {
+		background: url("/search/javax.faces.resource/images/icons/circle-plus.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.search-icon {
+		background: url("/search/javax.faces.resource/images/icons/search.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.important-icon {
+		background: url("/search/javax.faces.resource/images/icons/important.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.save-icon {
+		background: url("/search/javax.faces.resource/images/icons/save.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.link-icon {
+		background: url("/search/javax.faces.resource/images/icons/link.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.download-icon {
+		background: url("/search/javax.faces.resource/images/icons/download.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.times-icon {
+		background: url("/search/javax.faces.resource/images/icons/times.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.edit-icon {
+		background: url("/search/javax.faces.resource/images/icons/edit.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.bin-icon {
+		background: url("/search/javax.faces.resource/images/icons/bin.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.plus-icon {
+		background: url("/search/javax.faces.resource/images/icons/plus.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.arrow-right-icon {
+		background: url("/search/javax.faces.resource/images/icons/long-arrow-right.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.arrow-left-icon {
+		background: url("/search/javax.faces.resource/images/icons/long-arrow-left.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.arrow-up-icon {
+		background: url("/search/javax.faces.resource/images/icons/long-arrow-up.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.arrow-down-icon {
+		background: url("/search/javax.faces.resource/images/icons/long-arrow-down.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+	
+	.hotkeys-icon {
+		background: url("/search/javax.faces.resource/images/icons/burning-key.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+
+	.chemistry-icon {
+		background: url("/search/javax.faces.resource/images/icons/chemistry.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+	}
+
+	.chat-icon {
+		/* Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> */
+		background: url("/search/javax.faces.resource/images/icons/chat.svg.jsf?ln=w-ps-cc") center center / contain no-repeat;
+		height: 16px;
+		min-height: 16px;
+	}
+	
+	/*	RTL support */
+	[dir=rtl] .chevron-left-icon,
+	[dir=rtl] .chevron-right-icon,
+	[dir=rtl] .double-chevron-left-icon, 
+	[dir=rtl] .double-chevron-right-icon,
+	[dir=rtl] .external-link-icon {
+	    transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+	    -moz-transform: rotateY(180deg);
+	    -o-transform: rotateY(180deg);
+	    -ms-transform: rotateY(180deg);
+	}

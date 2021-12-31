@@ -1,0 +1,40 @@
+/* ============================================================================================= */
+/*	CSS classes used by the Machine Translation widget
+/* ============================================================================================= */	
+
+	span.trans-control1 {
+		opacity: 0;
+		font-size: 1px;
+	}
+	
+	.trans-control {
+		font-size: 10px;
+		color: red;
+	}
+	
+	.goog-te-sectional-gadget-link-text {
+		font-size: 10px;
+		color: red;
+	}
+	
+	a.goog-te-gadget-link {
+		color: inherit;
+		opacity: inherit;
+	}
+	
+	/* Removes the default CSS set by the widget*/
+	.mtMenuContainer { 
+		background: inherit !important; 
+    	color: inherit !important; 
+    	font-size: inherit !important; 
+    	border: none !important; 
+    	border-radius: 0 !important; 
+    	font-family: inherit !important; 
+	}
+	
+	.taptaMtNew:not(:empty) {
+		outline: 1px solid #ccc;
+	    background: white;
+	    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+	    padding: 0.5em;
+	}

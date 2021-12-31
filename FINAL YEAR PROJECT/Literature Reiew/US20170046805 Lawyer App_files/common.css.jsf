@@ -1,0 +1,186 @@
+/*	***************************** GENERAL STYLES ******************************************************************* */
+
+/*	Opposite alignment of text for LTR direction */
+.content-dir-opposite {
+	text-align: right !important;
+}
+
+[dir=rtl] .content-dir-opposite {
+	text-align: left !important;
+}
+
+.content-nowrap {
+	white-space: nowrap;
+}
+
+/* Avoid long non-breakable text to overflow */
+.content--text-wrap {
+ 	word-break: break-word;
+}
+
+/*	Search hits highlighting */	
+.term-highlight {
+	background-color: #B1E4F3;
+}
+
+.input--info--controls {
+	justify-content: flex-end;
+	font-size: inherit;
+}
+
+.input--info--controls a {
+	text-decoration: none;	
+}
+
+.font-size--small {
+	font-size: 0.875rem; /* 14px */	
+}
+
+.info-container {
+	margin-top:8px;
+	margin-bottom:8px;
+}
+
+/* ====================== FLEX DISPLAYING ====================================================== */
+
+	/*	Flex items are laid out horizontally
+		- Default flex-direction: 	row
+		- Default flex-wrap: 		nowrap 
+		- Default justify-content:	flex-start (to the 'left' if dir=ltr) 
+		- Default align-items: 		stretch (fill the container) 
+		- Default align-content:	stretch (when multiple lines, they stretch to fill the container)*/
+	.flex-container {
+		display: flex;
+	}
+	
+	/*	Flex items are laid out vertically */	
+	.flex-container-v {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	/*	Flex items will wrap onto multiple lines, from top to bottom */
+	.flex-container.content-wrap {
+		flex-wrap: wrap;
+	}
+	
+	/* ============= Modifiers Flexbox horizontal ==================================== */
+	
+		/*	Align the items horizontally to the center */
+		.flex-container.content-h-center {
+			justify-content: center;
+		}
+		
+		/*	Align the items horizontally to the end of the flex container direction */
+		.flex-container.content-h-end {
+			justify-content: flex-end;
+		}
+		
+		/*	Align the items vertically to the center */
+		.content-v-center {
+			align-items: center;
+		}
+		
+	/* ============= Modifiers Flexbox vertical ======================================= */
+		
+		/*	Align the items horizontally to the end of the flex container direction */
+		.flex-container-v.content-h-end {
+			align-items: flex-end;
+		}
+
+/*	==================== IPC TOOLTIP CONTENT =========================== */	
+	
+	.ipc-tooltip {
+		width: 600px;
+	}
+	
+	.ipc-tooltip table.ipc td {
+	    vertical-align: top;
+ 	    line-height: 1rem;
+	}
+	
+	.ipc-tooltip table.ipc tr:not(:last-child) td {
+	    padding-bottom: 0.75rem;
+	}
+	
+	.ipc-tooltip table.ipc .ipccod {
+        text-align: right;
+	    font-weight: 500;
+	}
+	
+	.ipc-tooltip table.ipc .ipctxt {
+	    font-size: 14px;
+	    padding-left: 1rem;
+	}
+	
+	.ipc-tooltip table.ipc .ipccod_interm {
+		text-align: right;
+		font-style: italic;
+	}
+
+/*	==================== Patent Image Card =========================== */
+	
+	.patent-img-card {
+	    /* Fixed size not filling empty space*/
+	    width: 224px;
+	    height: 224px;
+	    background: #fff;
+	}
+	
+	.patent-img-card .patent-img-card--content {
+		height: 100%;
+	    width: 100%;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	}
+
+	.patent-img-card .result-image-link {
+		display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    height: 100%;
+	    width: 100%;
+	    padding: 0.75rem;
+	}
+
+	.patent-img-card img.patent-img-card--img {
+	    display: block;
+	    width: 100%;
+	    height: auto;
+	    max-height: 100%;
+	    max-width: 100%;
+	    object-fit: contain;
+	}
+	
+/*	==================== MAGNIFIABLE ELEMENT =========================== */		
+
+	.magnifiable {
+		transition: all 0.2s ease-in-out;
+	}
+	
+	.magnifiable:hover {
+		transform: scale(2.0);
+		transform-origin: top left;
+		z-index: 1;
+		box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+	}
+	
+	[dir=rtl] .magnifiable:hover {
+		transform-origin: top right;
+	}
+	
+/* ====================== WFACES THEME MIMIC =================================================== */
+	
+	/*	Reproduce the wfaces edit panel buttons positioning */
+	.form-buttons {
+		display: flex;
+		justify-content: flex-end;
+	    margin-top: 1.5em;
+	}
+	
+	/*	Reproduce the padding added by wfaces between the checkbox input and its label */
+	.checkbox-label {
+		padding-left: .375em;
+		padding-right: .375em;
+	}

@@ -1,0 +1,41 @@
+// TODO JG - encapsulate scripts for each component
+
+function load_w_ps_cc_scripts() {
+	loadPlainSelect();	
+}
+
+/* 	PLAIN SELECT SCRIPTS */
+/* ========================================================================= */
+	// Takes each plain-select component and resize its width to the width of its selected option instead of to its largest option (default html behaviour)
+	function loadPlainSelect() {
+		const $selects = $(".ps-plain-select--input");
+	
+		$(document).on('change', ".ps-plain-select--input", resizeSelect);
+		$selects.each(resizeSelect);
+	}
+	
+	function resizeSelect() {
+	    let $select = $(this),
+			$selectedOption = $select.find("option:selected"), // Get the selected option on this select
+	    	$selectHelper = $select.next('.ps-plain-select--input-helper'), // Get sibling helper select
+	    	$optionHelper = $selectHelper.find("option"); // Get unique option defining the select width
+	    	
+		$optionHelper.text($selectedOption.text()); // Assigns the selected option of the select to the helper select for this to take the desired width
+	    $select.width($selectHelper.width()); // Assigns the desired width to the input select
+	    $optionHelper.text(''); // reset the helper select
+	}
+
+	
+/* 	HELPER FUNCTIONS */
+/* ========================================================================= */
+	function createCustomEvent(eventName) {
+		var event;
+		if (typeof(Event) === 'function') { // Test if browser supports's Event
+			event = new Event(eventName);
+		} else {
+			// IE 11 support
+			event = document.createEvent('Event');
+			event.initEvent(eventName, true, true);
+		}
+		document.dispatchEvent(event);
+	}

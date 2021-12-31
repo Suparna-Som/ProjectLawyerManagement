@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.LawyerOtherActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/whiteCardColor"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Enter/Edit Other detail"
+        app:titleTextColor="@color/blackTextColor"
+        tools:ignore="MissingConstraints"/>
+
+    <EditText
+        android:id="@+id/service1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Enter Your Service Cities"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/courts1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+
+        android:hint="Enter Your Visiting Courts"
+
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/edu1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+
+        android:hint="Enter Your Education details"
+
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/exp1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+
+        android:hint="Enter Your Year of Experience"
+
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/about1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Enter Your About"
+
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="14sp"
+        android:layout_marginTop="20dp" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/update"
+        android:elevation="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#ffff"
+        android:background="@color/design_default_color_error"
+        android:layout_gravity="bottom"/>
+
+</LinearLayout>

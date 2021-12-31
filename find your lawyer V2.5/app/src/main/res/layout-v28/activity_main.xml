@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/drawer_layout"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@color/whiteCardColor"
+            android:id="@+id/app_bar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:menu="@menu/main_menu"
+                android:background="@color/whiteCardColor"
+                app:titleTextColor="@color/blackTextColor"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frame_layout"
+            android:layout_below="@id/app_bar"
+            android:layout_above="@+id/bottom_nav1"/>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottom_nav1"
+            android:layout_alignParentBottom="true">
+
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:id="@+id/bottomAppBar"
+                app:fabCradleMargin="15dp"
+                app:fabCradleRoundedCornerRadius="10dp"
+                android:outlineSpotShadowColor="#DEACF3"
+                android:background="@color/whiteCardColor"
+                android:theme="@style/theme2">
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottom_nav"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:background="@android:color/transparent"
+                    app:itemHorizontalTranslationEnabled="false"
+                    app:menu="@menu/nav_menu"/>
+
+
+            </com.google.android.material.bottomappbar.BottomAppBar>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/add"
+                
+                app:rippleColor="@color/whiteCardColor"
+                app:borderWidth="0dp"
+                app:fabSize="normal"
+                app:elevation="0dp"
+                android:focusable="true"
+                android:adjustViewBounds="true"
+                app:layout_anchor="@id/bottomAppBar"
+                app:layout_anchorGravity="bottom|center"/>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_drawer_menu"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="start" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

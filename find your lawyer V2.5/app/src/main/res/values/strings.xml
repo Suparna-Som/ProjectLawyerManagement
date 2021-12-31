@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Find Your Lawyer</string>
+    <string name="open_nav">Open</string>
+    <string name="close_nav">Close</string>
+
+
+    <string name="register">REGISTER</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="signup_login_hint">Already have an account? Sign In</string>
+    <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
+
+    <string name="title_activity_profile">Profile</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_one">Hey I\'m tab one</string>
+    <string name="tab_three">Hey I\'m tab three</string>
+    <string name="tab_two">Hey I\'m tab two</string>
+    <string name="movies">Movies</string>
+    <string name="top_grossing">Top Grossing</string>
+    <string name="new_movies">New</string>
+    <string name="popular">Popular</string>
+    <string name="movies_toast">Movies</string>
+    <string name="books">Books</string>
+    <string name="music">Music</string>
+    <string name="favourites">Favourites</string>
+    <string name="welcome_message">Welcome to Nameless App</string>
+
+    <!--Added later need to filter out-->
+    <string name="slogan">"Your Solution We Give"</string>
+    <string name="slogan2">"Immigration Solution You Deserves"</string>
+    <string name="find_your_lawyer">Find Your Lawyer</string>
+    <string name="passwordError"><![CDATA[Password must be atleast 6 character long\n-Include SpecialCharacter (#$%&)]]></string>
+    <string name="passwordRequired">password is required</string>
+    <string name="ErrorString">Something went wrong From our site please visit later</string>
+    <string name="login_as_a_guest">Login as a Guest</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="menu_home">Menu Gallary</string>
+    <string name="menu_gallery">Menu Gallery</string>
+    <string name="menu_slideshow">Menu Slideshow</string>
+    <string name="login">Login</string>
+    <string name="ErrorVerificatio">Fail to Send Verification Email. \n Please Try again</string>
+
+</resources>

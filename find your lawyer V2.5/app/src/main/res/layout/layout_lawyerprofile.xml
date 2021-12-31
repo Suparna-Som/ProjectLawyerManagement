@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    android:layout_marginTop="5dp"
+    android:elevation="5dp"
+    android:id="@+id/parentCard"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/rel1"
+        android:padding="15dp">
+       <RelativeLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/relIn1">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/profilelogo"
+            android:layout_marginTop="0dp"
+            android:id="@+id/img1"
+            android:layout_alignParentLeft="true"
+            />
+
+       </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/relIn1"
+            >
+
+            <TextView
+                android:id="@+id/nametext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="sans-serif-black"
+                android:paddingTop="0dp"
+                android:text="Name of Lawyer"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addresstxt"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/nametext"
+                android:textSize="15dp"
+                android:hint="Address"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/view1"
+                android:layout_marginTop="4dp"
+                android:layout_below="@+id/addresstxt"
+                android:background="#E1E1EC" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/linear1"
+                android:layout_below="@id/addresstxt">
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                style="@android:style/Widget.Material.RatingBar.Small"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:numStars="5"
+                android:layout_below="@+id/addresstxt"
+                android:rating="4"></RatingBar>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="209 Reviews"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:id="@+id/linear2"
+                android:layout_below="@+id/linear1">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_experience"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="25 Years"/>
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="14dp"
+                    android:src="@drawable/ic_question_answer_24"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="264 Answers"/>
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="14dp"
+                    android:src="@drawable/ic_heart_svgrepo_com"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="249"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear2"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/consult"
+                    android:background="@color/design_default_color_error"
+                    android:textColor="@color/whiteCardColor"
+                    android:text="consult"/>
+                <Button
+                    android:id="@+id/downarrow"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/whiteCardColor"
+                    android:textColor="@color/design_default_color_error"
+                    app:elevation="20dp"
+                    android:src="@drawable/ic_arrow_down_24"
+                    android:text="Show More" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel3"
+        android:layout_margin="15dp"
+        android:visibility="gone"
+        android:layout_below="@+id/rel1">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Law Practices"
+            android:id="@+id/lawpractice"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:id="@+id/emailtext"
+            android:layout_below="@+id/lawpractice"
+            android:textSize="20dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/uparrow"
+            android:src="@drawable/ic_arrow_up_24"
+            android:layout_below="@+id/emailtext"
+            android:layout_alignParentEnd="true"/>
+
+
+    </RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

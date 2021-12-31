@@ -1,0 +1,50 @@
+var DetailHotkeys = function() {
+	
+	const detailTabsSelector = '.js-detail-tabs', 
+		  $selectedTab = $(detailTabsSelector).find('li.ui-tabmenuitem.ui-state-active');
+	var $nextTab, $prevTab;	
+	
+	function goToNextTab($tab) {
+		
+		$nextTab = ($tab || $selectedTab).next();
+		if ($nextTab.length == 0) {
+			return;
+		}
+		
+		var $link = $nextTab.find('a.ui-menuitem-link').first();
+		if($link.hasClass("ui-state-disabled")) {
+			return goToNextTab($nextTab); // Go to next tab as this is disabled
+		} else {
+			$link[0].click(); // jquery click only fires on a[href=#] (AJAX ones)
+		}
+	}
+	
+	function goToPrevTab($tab) {
+		$prevTab = ($tab || $selectedTab).prev();
+		if ($prevTab.length == 0) {
+			return;
+		}
+		
+		var $link = $prevTab.find('a.ui-menuitem-link').first();
+		if($link.hasClass("ui-state-disabled")){
+			return goToPrevTab($prevTab); // Go to prev tab as this is disabled
+		} else {
+			$link[0].click();
+		}
+	}
+	
+	function goToDetailSelectedTab() {
+		if ($selectedTab.length == 0) {
+			return;
+		}
+		var $selectedTabLink = $selectedTab.children('.ui-menuitem-link').first();
+		$selectedTabLink[0].focus(); // jquery focus only fires on a[href="#"] (AJAX ones)
+	}
+	
+	return {
+		goToDetailSelectedTab : goToDetailSelectedTab,
+		goToNextTab : goToNextTab,
+		goToPrevTab : goToPrevTab
+	};
+
+}();

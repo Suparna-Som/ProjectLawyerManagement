@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/whiteCardColor"
+    android:orientation="vertical"
+    tools:context=".fragments.FragmentProfile">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/whiteCardColor"
+        android:elevation="5dp"
+        android:id="@+id/toolbar"
+        app:title="Practice Area"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/toolbar">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:src="@drawable/ic_baseline_location_on_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/s1"
+            android:layout_marginLeft="20dp"
+            android:text="Service Cities : \nBangalore"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="7dp"
+
+        android:background="#E1E1EC" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/toolbar">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:src="@drawable/ic_black_menu_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/l1"
+            android:text="Area of Practices : \nCivil Law, Criminal Law, \nDivorce case, Marriage Law, \nCheque Bounce"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+
+        android:layout_marginBottom="7dp"
+        android:background="#E1E1EC" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/toolbar">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:src="@drawable/ic_about_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/v1"
+            android:text="Visiting Courts : \nKarnatka High Court"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        android:background="#E1E1EC" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/whiteCardColor"
+        android:elevation="5dp"
+        app:title="Additional Information"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/toolbar">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:src="@drawable/ic_baseline_error_outline_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/a1"
+            android:layout_marginLeft="20dp"
+            android:text="About : \nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+
+        android:background="#E1E1EC" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="50dp"
+        android:layout_below="@+id/toolbar">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:src="@drawable/ic_law"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/e1"
+            android:layout_marginLeft="20dp"
+            android:text="Education : \nLLB from SSL Law college, Gulabarge"/>
+    </LinearLayout>
+       <View
+           android:layout_width="match_parent"
+           android:layout_height="1dp"
+           android:background="#E1E1EC" />
+       <!--
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:layout_marginBottom="10dp"
+           android:layout_below="@+id/toolbar">
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:paddingTop="8dp"
+               android:src="@drawable/ic_law"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:id="@+id/ex1"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="20dp"
+               android:text="Education : \nLLB from SSL Law college, Gulabarge"/>
+       </LinearLayout>
+       <View
+           android:layout_width="match_parent"
+           android:layout_height="1dp"
+
+           android:background="#E1E1EC" />
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:layout_marginBottom="10dp"
+           android:layout_below="@+id/toolbar">
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:paddingTop="8dp"
+               android:src="@drawable/ic_law"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/d1"
+               android:layout_marginLeft="20dp"
+               android:text="Education : \nLLB from SSL Law college, Gulabarge"/>
+       </LinearLayout>
+       <View
+           android:layout_width="match_parent"
+           android:layout_height="1dp"
+
+           android:background="#E1E1EC" />
+
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:layout_marginBottom="50dp"
+           android:layout_below="@+id/toolbar">
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:paddingTop="8dp"
+               android:src="@drawable/ic_law"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/g1"
+               android:layout_marginLeft="20dp"
+               android:text="Education : \nLLB from SSL Law college, Gulabarge"/>
+       </LinearLayout>
+
+       -->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+
+        android:background="#E1E1EC" />
+
+   </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@color/whiteCardColor"
+            android:textColor="@color/design_default_color_error"
+            app:elevation="20dp"
+            android:src="@drawable/ic_arrow_down_24"
+            android:text="Write a review" />
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:id="@+id/consult"
+            android:layout_weight="1"
+            android:background="@color/design_default_color_error"
+            android:textColor="@color/whiteCardColor"
+            android:text="consult online"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

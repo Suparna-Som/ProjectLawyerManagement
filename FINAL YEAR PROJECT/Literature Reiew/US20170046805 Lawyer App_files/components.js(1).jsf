@@ -1,0 +1,25 @@
+// TODO JG - encapsulate scripts for each component
+var PSComponents = function() {
+	
+	/* ========================================================================= */
+	/* COMPONENT'S STATES HANDLING */
+	/* ========================================================================= */
+	function highlightComponent(component) {
+		const $component = $(component);
+		if ($component) $component.toggleClass('ps-status--highlight');
+	}
+	
+	/* ========================================================================= */
+	/* 	DRAWER */
+	/* ========================================================================= */
+	function closeDrawer(drawerId) {
+		const $drawer = $(PrimeFaces.escapeClientId(drawerId));
+		$drawer.find('.js-close-button').click();
+	}
+	
+	return {
+		closeDrawer : closeDrawer,		
+		highlightComponent : highlightComponent
+	};
+
+}();
